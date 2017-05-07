@@ -1,0 +1,52 @@
+#space_top {
+    padding-top: 2.5%;
+}
+
+#space_top0 {
+    padding-top: 2.5%;
+}
+
+#space_top1 {
+    padding-top: 2.5%;
+}
+
+#space_top2 {
+    padding-top: 2.5%;
+}
+
+#space_top3 {
+    padding-top: 2.5%;
+}
+
+#space_top4 {
+    padding-top: 2.5%;
+}
+
+#space_top5 {
+    padding-top: 2.5%;
+}
+
+#space_top6 {
+    padding-top: 2.5%;
+}
+
+#table_voter {
+    margin-bottom: 5%;
+    box-shadow: 2px 2px 2px 2px lightgray;
+}
+
+a {
+    color: #000;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+th, td {
+    background-color: #339999;
+    border: 1px solid white;
+    word-wrap: break-word;
+    color: whitesmoke;
+}
