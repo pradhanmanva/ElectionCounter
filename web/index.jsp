@@ -27,11 +27,11 @@
 <div class="container">
     <div id="space_top6"></div>
     <div class="row">
-        <div class="col s6"><a class="btn-floating btn-large waves-effect waves-light teal" href="AddSlipData.jsp">
+        <div class="col s6"><a class="btn-floating btn-large waves-effect waves-light teal" href="AddSlipDataForm.jsp">
             <i class="material-icons">add</i></a> Add Slip Data
         </div>
 
-        <div class="col s6"><a class="btn-floating btn-large waves-effect waves-light teal" href="CheckSlipData.jsp">
+        <div class="col s6"><a class="btn-floating btn-large waves-effect waves-light teal" href="CheckSlipDataForm.jsp">
             <i class="material-icons">done</i></a> Check Slip Data
         </div>
     </div>
