@@ -24,7 +24,7 @@ public class Main {
         x[10] = 2;
         int y = 1;
         int id = object.getMaxID() + 1;
-        SlipData obje = object.updateSlipData(y, x);
+        boolean obje = object.updateSlipData(y, x);
         System.out.print(object.addSlipData(id, x));
     }
 }
