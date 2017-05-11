@@ -21,13 +21,13 @@
     <div class="row" id="space_top"></div>
     <div class="row" id="space_top1"></div>
     <div class="card teal lighten-4">
-        <form action="AddSlipDataForm.jsp" method="get">
+        <form action="AddSlipData.jsp" method="get">
             <div class="row" id="space_top2"></div>
             <div class="row">
                 <div class="col s2"><a class="btn-floating btn-large waves-effect waves-light teal" href="index.jsp">
                     <i class="material-icons">fast_rewind</i></a></div>
                 <div class="input-field col s4">
-                    <input id="slipNumber" type="number" class="validate">
+                    <input id="slipNumber" type="number" class="validate" name="slipNumber">
                     <label for="slipNumber">Slip Number</label>
                 </div>
                 <div class="col s4">
@@ -37,26 +37,25 @@
                 </div>
             </div>
             <%
-
                 for (int j = 1, i = 1; i <= 6; i++, j = j + 3) {
             %>
             <div class="row">
                 <div class="col s2"></div>
                 <div class="col s2"><p>
-                    <input name="SlipData" type="checkbox" id="<%=Integer.toString(j)%>"/>
+                    <input name="SlipData" type="checkbox" id="<%=Integer.toString(j)%>" value="<%=Integer.toString(j)%>"/>
                     <label for="<%=Integer.toString(j)%>">#<%=j%>
                     </label>
                 </p></div>
                 <div class="col s1"></div>
                 <div class="col s2"><p>
-                    <input name="SlipData" type="checkbox" id="<%=Integer.toString(j+1)%>"/>
+                    <input name="SlipData" type="checkbox" id="<%=Integer.toString(j+1)%>" value="<%=Integer.toString(j+1)%>"/>
                     <label for="<%=Integer.toString(j+1)%>">#<%=j + 1%>
                     </label>
                 </p></div>
                 <div class="col s1"></div>
                 <div class="col s2"><p>
-                    <input name="SlipData" type="checkbox" id="<%=Integer.toString(j+2)%>"/>
-                    <label for="<%=Integer.toString(j+2)%>">#<%=j + 2%>
+                    <input name="SlipData" type="checkbox" id="<%=Integer.toString(j+2)%>" value="<%=Integer.toString(j+2)%>"/>
+                    <label for="<%=Integer.toString(j + 2)%>">#<%=j + 2%>
                     </label>
                 </p></div>
                 <div class="col s2"></div>
@@ -64,7 +63,7 @@
             <%
                 }
             %>
-
+            <div id="space_top6"></div>
         </form>
     </div>
 </div>

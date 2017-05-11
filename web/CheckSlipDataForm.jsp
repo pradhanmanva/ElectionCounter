@@ -10,8 +10,9 @@
 <%@page import="Connecting.*" %>
 
 <%
-    jdbcClass object = new jdbcClass();
-    CandidateClass[] candidateClasses = object.SelectStatement();
+    try {
+        jdbcCandidate object = new jdbcCandidate();
+        CandidateClass[] candidateClasses = object.SelectStatement();
 %>
 <html>
 <head>
@@ -28,13 +29,13 @@
     <div class="row" id="space_top"></div>
     <div class="row" id="space_top1"></div>
     <div class="card teal lighten-4">
-        <form>
+        <form method="get" action="checkSlipData.jsp">
             <div class="row" id="space_top2"></div>
             <div class="row">
                 <div class="col s2"><a class="btn-floating btn-large waves-effect waves-light teal" href="index.jsp">
                     <i class="material-icons">fast_rewind</i></a></div>
                 <div class="input-field col s4">
-                    <input id="slip_number" type="number" class="validate">
+                    <input id="slip_number" type="number" class="validate" name="slip_number">
                     <label for="slip_number">Slip Number</label>
                 </div>
                 <div class="col s6">
@@ -59,13 +60,37 @@
                                 }
                             %>
                         </tr>
+                        <%
+                            SlipData slipData = (SlipData) request.getAttribute("slipdata");
+                            int num[] = new int[18];
+                            if (slipData != null) {
+                                num[0] = slipData.get_1();
+                                num[1] = slipData.get_2();
+                                num[2] = slipData.get_3();
+                                num[3] = slipData.get_4();
+                                num[4] = slipData.get_5();
+                                num[5] = slipData.get_6();
+                                num[6] = slipData.get_7();
+                                num[7] = slipData.get_8();
+                                num[8] = slipData.get_9();
+                                num[9] = slipData.get_10();
+                                num[10] = slipData.get_11();
+                                num[11] = slipData.get_12();
+                                num[12] = slipData.get_13();
+                                num[13] = slipData.get_14();
+                                num[14] = slipData.get_15();
+                                num[15] = slipData.get_16();
+                                num[16] = slipData.get_17();
+                                num[17] = slipData.get_18();
+                            }
+                        %>
                         <tr>
                             <td>Voted</td>
                             <%
                                 for (int i = 0; i < 18; i++) {
                             %>
                             <td>
-                                <%=i%>
+                                <%=num[i]%>
                             </td>
                             <%
                                 }
@@ -79,3 +104,10 @@
 </div>
 </body>
 </html>
+<%
+    } catch (Exception e) {
+        request.getRequestDispatcher("errorPage.jsp").forward(request, response);
+        System.out.println(e.getMessage());
+        e.printStackTrace();
+    }
+%>

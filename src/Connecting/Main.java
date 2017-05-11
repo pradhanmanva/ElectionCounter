@@ -7,9 +7,9 @@ import Beans.SlipData;
  */
 public class Main {
     public static void main(String args[]) {
-        jdbcClass obj = new jdbcClass();
+        jdbcCandidate obj = new jdbcCandidate();
         obj.print();
-        SlipDataClass object = new SlipDataClass();
+        jdbcSlipData object = new jdbcSlipData();
         int[] x = new int[18];
         x[0] = 3;
         x[1] = 6;
@@ -24,7 +24,9 @@ public class Main {
         x[10] = 2;
         int y = 1;
         int id = object.getMaxID() + 1;
-        boolean obje = object.updateSlipData(y, x);
+        boolean o = object.updateSlipData(y, x);
         System.out.print(object.addSlipData(id, x));
+        SlipData slipData = object.showSlipData(4);
+        System.out.println();
     }
 }

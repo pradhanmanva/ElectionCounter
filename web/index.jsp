@@ -9,8 +9,11 @@
 <%@page import="Connecting.*" %>
 <%@page import="Beans.*" %>
 <%
-    jdbcClass object = new jdbcClass();
-    CandidateClass[] candidateClasses = object.SelectStatement();
+    try {
+        jdbcCandidate object = new jdbcCandidate();
+        CandidateClass[] candidateClasses = object.selectStatement();
+        runXampp.startXampp();
+        object.updateTable();
 %>
 <html>
 <head>
@@ -31,7 +34,8 @@
             <i class="material-icons">add</i></a> Add Slip Data
         </div>
 
-        <div class="col s6"><a class="btn-floating btn-large waves-effect waves-light teal" href="CheckSlipDataForm.jsp">
+        <div class="col s6"><a class="btn-floating btn-large waves-effect waves-light teal"
+                               href="CheckSlipDataForm.jsp">
             <i class="material-icons">done</i></a> Check Slip Data
         </div>
     </div>
@@ -43,7 +47,6 @@
                         <th>Number#</th>
                         <th>Name</th>
                         <th>Votes</th>
-                        <th>Panel</th>
                     </tr>
                     <%
                         for (CandidateClass x : candidateClasses) {
@@ -54,8 +57,6 @@
                         <td><%=x.getName()%>
                         </td>
                         <td><%=x.getVotes()%>
-                        </td>
-                        <td><%=x.getPanel()%>
                         </td>
                     </tr>
                     <%
@@ -68,3 +69,9 @@
 </div>
 </body>
 </html>
+<%
+    } catch (Exception e) {
+        request.getRequestDispatcher("errorPage.jsp").forward(request, response);
+        System.out.println(e.getMessage());
+        e.printStackTrace();
+    }%>
