@@ -12,7 +12,6 @@
     try {
         jdbcCandidate object = new jdbcCandidate();
         CandidateClass[] candidateClasses = object.selectStatement();
-        runXampp.startXampp();
         object.updateTable();
 %>
 <html>

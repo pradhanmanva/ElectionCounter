@@ -3,9 +3,6 @@ package Connecting;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-/**
- * Created by pradh on 5/6/2017.
- */
 public class connectionProvider implements ConnectionInterface {
     Connection connection = null;
     private boolean result = false;

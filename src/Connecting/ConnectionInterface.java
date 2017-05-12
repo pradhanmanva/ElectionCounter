@@ -5,7 +5,7 @@ package Connecting; /**
 interface ConnectionInterface {
 
     String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    String DB_URL = "jdbc:mysql://localhost/election";
+    String DB_URL = "jdbc:mysql://localhost/electioncounter";
     String USER = "root";
     String PASS = "";
 

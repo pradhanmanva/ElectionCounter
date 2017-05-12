@@ -3,10 +3,7 @@ package Connecting;
 import Beans.CandidateClass;
 import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 
 public class jdbcCandidate {
@@ -78,10 +75,10 @@ public class jdbcCandidate {
 
     public boolean updateTable() {
         sql = "UPDATE CANDIDATES SET VOTES=? WHERE ID=?";
-
         try {
             for (int i = 1; i <= 18; i++) {
                 String SQL = "SELECT SUM(slipdata._" + Integer.toString(i) + ") FROM CANDIDATES, SLIPDATA WHERE CANDIDATES.ID=SLIPDATA.ID";
+
                 statement = con.connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(SQL);
                 resultSet.next();

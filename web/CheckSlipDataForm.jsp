@@ -12,7 +12,7 @@
 <%
     try {
         jdbcCandidate object = new jdbcCandidate();
-        CandidateClass[] candidateClasses = object.SelectStatement();
+        CandidateClass[] candidateClasses = object.selectStatement();
 %>
 <html>
 <head>
